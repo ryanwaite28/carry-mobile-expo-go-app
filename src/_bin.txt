@@ -1,0 +1,39 @@
+<Button title="Enter From Address *" onPress={() => { set_from_address_modal_visible(true); }} />
+            <Modal
+              animationType="slide"
+              transparent={false}
+              visible={from_address_modal_visible}
+              onRequestClose={() => {
+                Alert.alert("Modal has been closed.");
+                console.log(`modal close requested`);
+                set_from_address_modal_visible(false);
+              }}
+            >
+              <SafeAreaView>
+                <View style={styles.addressModalContainer}>
+                  <Text style={{ marginBottom: 50 }}>From Address *</Text>
+                  
+                  <GooglePlacesAutocomplete
+                    placeholder="From Address"
+                    styles={{
+                      container: { backgroundColor: 'transparent' },
+                    }}
+                    keyboardShouldPersistTaps = {'handled'}
+                    listUnderlayColor = {'transparent'}
+                    // styles={StylesConstants.COMMON_STYLES.input}
+                    onPress={(data, details = null) => {
+                      // 'details' is provided when fetchDetails = true
+                      console.log(JSON.stringify({ data, details }));
+                      loadPlaceDetails(data.place_id, set_from_place);
+                      set_from_address_modal_visible(false);
+                    }}
+                    query={{
+                      key: AppGlobalState.GOOGLE_API_KEY,
+                      language: 'en',
+                    }}
+                  />
+  
+                  <Button title="Close" onPress={() => { set_from_address_modal_visible(false); }} />
+                </View>
+              </SafeAreaView>
+            </Modal>

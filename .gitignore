@@ -1,6 +1,9 @@
 node_modules/
 .expo/
+.vscode/
 dist/
+env/
+env/*.env
 npm-debug.*
 *.jks
 *.p8
@@ -9,6 +12,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+package-lock.json
+google-services.json
+carry-firebase-service-account.json
 
 # macOS
 .DS_Store

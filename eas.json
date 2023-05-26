@@ -1,0 +1,32 @@
+{
+  "cli": {
+    "appVersionSource": "local"
+  },
+
+  "build": {
+    "preview": {
+      "channel": "preview"
+    },
+    "production": {
+      "channel": "production",
+      "autoIncrement": true,
+      "env": {
+        "API_PORT": "443",
+        "API_DOMAIN": "https://rmw-modern-server.herokuapp.com"
+      }
+    }
+  },
+
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./carry-firebase-service-account.json",
+        "track": "production"
+      },
+      "ios": {
+        "appleId": "business@ryanmyronwaite.com",
+        "appleTeamId": "68YLM7HZ6H"
+      }
+    }
+  }
+}

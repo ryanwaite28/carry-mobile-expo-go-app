@@ -1,13 +1,51 @@
 {
   "expo": {
+    "id": "c1c96370-fe44-4da2-ae5d-65b5a1a6046c",
+    "description": "Become your own carrier!",
     "name": "carry",
     "slug": "carry",
+    "scheme": "carry",
+    "owner": "ryanwaite28",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/app_icon.png",
     "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/app_icon.png"
+        }
+      ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "",
+          "enableGooglePay": false
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
+        }
+      ]
+    ],
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/app_splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,11 +56,21 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "5",
+      "bundleIdentifier": "com.ryanmyronwaite.carry",
+      "supportsTablet": true,
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": [
+          "carry"
+        ]
+      }
     },
     "android": {
+      "package": "com.ryanmyronwaite.carry",
+      "versionCode": 6,
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/app_icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
