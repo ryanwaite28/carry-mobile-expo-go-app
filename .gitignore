@@ -13,7 +13,7 @@ npm-debug.*
 *.orig.*
 web-build/
 package-lock.json
-google-services.json
+# google-services.json
 carry-firebase-service-account.json
 
 # macOS

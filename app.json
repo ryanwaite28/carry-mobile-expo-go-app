@@ -56,7 +56,7 @@
       "**/*"
     ],
     "ios": {
-      "buildNumber": "5",
+      "buildNumber": "6",
       "bundleIdentifier": "com.ryanmyronwaite.carry",
       "supportsTablet": true,
       "infoPlist": {
@@ -67,7 +67,7 @@
     },
     "android": {
       "package": "com.ryanmyronwaite.carry",
-      "versionCode": 6,
+      "versionCode": 7,
       "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/app_icon.png",
